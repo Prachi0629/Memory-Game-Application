@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🐾 Animal Memory Match 🐾</h1>
+        <button id="resetBtn">Reset Game</button>
+    </header>
+
+    <main>
+        <section class="game-container"></section>
+        <aside class="leaderboard">
+    <h2>🏆 Leaderboard</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+                <th>Moves</th>
+                <th>Time (s)</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboardBody"></tbody>
+    </table>
+</aside>
+
+    </main>
+
+    <!-- Congrats Popup -->
+    <div id="congratsPopup" class="popup hidden">
+        <div class="popup-content">
+            🎉 Congratulations! 🎉<br>You matched all the animals!
+        </div>
+    </div>
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
