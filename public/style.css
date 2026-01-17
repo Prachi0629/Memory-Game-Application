@@ -1,0 +1,161 @@
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    background: #f4f4f9;
+}
+
+header {
+    text-align: center;
+    padding: 15px;
+    background: #41ab45;
+    color: white;
+}
+
+button {
+    padding: 8px 14px;
+    margin-top: 10px;
+    background: #ff9800;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background: #e68a00;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Game Grid */
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+}
+
+.card {
+    
+    width: 100px;
+    height: 100px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    user-select: none;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+.card.flipped {
+    background: #fff5cc;
+    transform: rotateY(180deg);
+}
+.card.matched {
+    background: #d4edda;
+}
+
+/* Leaderboard */
+.leaderboard {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.leaderboard th, .leaderboard td {
+    padding: 8px;
+    text-align: center;
+}
+.leaderboard th {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.popup.hidden {
+    display: none;
+}
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Confetti Canvas */
+#confettiCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+}
+
+
+/* Mobile responsiveness for screens 600px wide or less */
+@media only screen and (max-width: 600px) {
+
+  main {
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .game-container {
+    grid-template-columns: repeat(4, 70px);  /* smaller cards */
+    grid-gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+
+  .leaderboard {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+
+  .leaderboard table {
+    font-size: 0.85rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    border-radius: 6px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .popup-content {
+    font-size: 1.2rem;
+    padding: 20px 30px;
+  }
+}
