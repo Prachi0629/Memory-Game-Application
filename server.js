@@ -7,13 +7,12 @@ const port = 5000;
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
+// Replace your old hardcoded const pool with this block:
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'memory_db',
-    password: 'Krish@0629',
-    port: 5432
+    connectionString: process.env.DATABASE_URL || 'postgres://postgres:Krish@0629@localhost:5432/memory_db',
+    ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false
 });
+
 
 app.post('/add-score', async (req, res) => {
     const { username, score, moves, time_taken } = req.body;
