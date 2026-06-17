@@ -12,7 +12,11 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/add-score",
+      "dest": "server.js"
+    },
+    {
+      "src": "/leaderboard",
       "dest": "server.js"
     },
     {
