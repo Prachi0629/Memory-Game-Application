@@ -4,7 +4,7 @@
 
 A full-stack interactive memory card matching game where users match animal cards, track their score, and compete globally on a live database leaderboard. Built with vanilla frontend assets and a Node.js Express backend deployed to Vercel.
 
-Live Demo: memory-game-application-new.vercel.app
+Live Demo: https://memory-game-application-new.vercel.app/
 
 ---
 
